@@ -1,0 +1,14 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magefox_Example::magefox_stores" title="Magento Fox" sortOrder="10" >
+                        <resource id="Magefox_Example::test" title="Test" sortOrder="10"/>
+                        <resource id="Magefox_Example::settings" title="Settings" sortOrder="20"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

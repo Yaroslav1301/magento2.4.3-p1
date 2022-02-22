@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="study" translate="label" sortOrder="10">
+            <label>Study</label>
+        </tab>
+        <section id="canceled_order" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Cancel Order</label>
+            <tab>study</tab>
+            <resource>Kozar_AddCancelOrder::cancel_order_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="allow_group" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow for Selected Group(s)</label>
+                    <source_model>Kozar\AddCancelOrder\Model\Config\Source\ConfigOptionsGroup</source_model>
+                </field>
+                <field id="allow_status" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow for Selected Status(es)</label>
+                    <source_model>Kozar\AddCancelOrder\Model\Config\Source\ConfigOptionsStatus</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,19 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<menu>
+    <add id="Magefox_Example::magefox_stores" title="Magento Fox"
+    module="Magefox_Example" sortOrder="50"
+    parent="Magento_Backend::stores"
+    resource="Magefox_Example::magefox_stores"/>
+
+    <add id="Magefox_Example::test" title="Test"
+         module="Magefox_Example" sortOrder="10"
+         parent="Magefox_Example::magefox_stores"
+         action="magefox/foxypage"
+         resource="Magefox_Example::test"/>
+    <add id="Magefox_Example::settings" title="Settings"
+         module="Magefox_Example" sortOrder="20"
+         parent="Magefox_Example::magefox_stores"
+         action="adminhtml/system_config/edit/section/magefox"
+         resource="Magefox_Example::settings"/>
+</menu>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <canceled_order>
+            <general>
+                <enable>1</enable>
+                <allow_group>General</allow_group>
+                <allow_status>Pending</allow_status>
+            </general>
+        </canceled_order>
+    </default>
+</config>

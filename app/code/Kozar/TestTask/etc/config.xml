@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <setCourse>
+            <general>
+                <enable>1</enable>
+                <UAHCourse>27,84</UAHCourse>
+                <RUBCourse>75,27</RUBCourse>
+                <EURCourse>0,85</EURCourse>
+            </general>
+        </setCourse>
+    </default>
+</config>

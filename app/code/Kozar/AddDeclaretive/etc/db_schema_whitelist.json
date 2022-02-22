@@ -1,0 +1,16 @@
+{
+    "student_database": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "age": true,
+            "is_graduated": true,
+            "crated_at": true,
+            "updated_at": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

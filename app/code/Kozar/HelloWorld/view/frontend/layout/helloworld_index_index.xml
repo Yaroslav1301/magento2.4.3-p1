@@ -1,0 +1,12 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Kozar\HelloWorld\Block\Index" name="helloworld_index_index" template="Kozar_HelloWorld::index.phtml" />
+            <block name="some.custom.text.block" class="Magento\Framework\View\Element\Text">
+                <arguments>
+                    <argument translate="true" name="text" xsi:type="string">Some Custom Text</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

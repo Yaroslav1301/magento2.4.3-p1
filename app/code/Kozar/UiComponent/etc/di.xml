@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="ui_component_manage_listing_data_source" xsi:type="string">StudyPool\ServiceContract\Model\ResourceModel\StudyPoolSc\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="StudyPool\ServiceContract\Model\ResourceModel\StudyPoolSc\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">studypool_servicecontract_sc</argument>
+            <argument name="resourceModel" xsi:type="string">StudyPool\ServiceContract\Model\ResourceModel\StudyPoolSc\Collection</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Kozar\UiComponent\Controller\Adminhtml\Manage\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUpload</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Catalog\CategoryImageUpload" type="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">logo/image</argument>
+            <argument name="basePath" xsi:type="string">logo/image</argument>
+        </arguments>
+    </virtualType>
+</config>

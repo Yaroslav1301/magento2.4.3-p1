@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <shipping_options>
+            <shipping_dual_confirmation>
+                <shipping_dual_confirmation_enabled>1</shipping_dual_confirmation_enabled>
+                <shipping_dual_confirmation_title>
+                    <![CDATA[Some title for modal window]]>
+                </shipping_dual_confirmation_title>
+                <shipping_dual_confirmation_desc>
+                    <![CDATA[Are you sure you want to use this shipping method?]]>
+                </shipping_dual_confirmation_desc>
+            </shipping_dual_confirmation>
+        </shipping_options>
+    </default>
+</config>

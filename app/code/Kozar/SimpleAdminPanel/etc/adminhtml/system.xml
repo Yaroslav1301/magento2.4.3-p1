@@ -1,0 +1,49 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+            <label>A meaningful label</label>
+        </tab>
+
+        <section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label">
+            <label>A meaningful section label</label>
+            <tab>A_UNIQUE_ID</tab>
+            <resource>Kozar_SimpleAdminPanel::path_to_the_acl_resource</resource>
+
+            <group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>A meaningful group label</label>
+                <comment>An additional comment helping users to understand the effect when configuring the fields defined in this group.</comment>
+
+                <field id="A_UNIQUE_FIELD_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" type="select">
+                    <label>Feature Flag Example</label>
+                    <comment>This field is an example for a basic yes or no select.<![CDATA[//]]></comment>
+                    <tooltip>Usually these kinds of fields are used to enable or disable a given feature. Other fields might be dependent to this and will only appear if this field is set to yes.</tooltip>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="ANOTHER_UNIQUE_FIELD_ID" translate="label" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" type="text">
+                    <label>A meaningful field label</label>
+                    <comment>A descriptive text explaining this configuration field.</comment>
+                    <tooltip>Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.</tooltip>
+                    <validate>required-entry no-whitespace</validate> <!-- Field is required and must not contain any whitespace. -->
+                    <if_module_enabled>Kozar_SimpleAdminPanel</if_module_enabled>
+                    <depends> <!-- This field will only be visible if the field with the id A_UNIQUE_FIELD_ID is set to value 1 -->
+                        <field id="A_UNIQUE_FIELD_ID">1</field>
+                    </depends>
+                </field>
+
+                <field id="IMAGE_UPLOADER_TEST" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" type="image">
+                    <label>Upload your image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">test/kozar/image</upload_dir>
+                    <base_url type="media" scope_info="1">test/kozar/image</base_url>
+                </field>
+                <field id="FILE_UPLOADER_TEST" translate="label" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1" type="file">
+                    <label>Upload your file</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">test/kozar/file</upload_dir>
+                    <base_url type="media" scope_info="1">test/kozar/file</base_url>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

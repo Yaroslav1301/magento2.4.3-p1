@@ -1,0 +1,42 @@
+#customer-comment-block {
+    display: none;
+    position: relative;
+    top: 20px;
+    left: 21px;
+}
+.comment-block {
+    color: #006bb4;
+    cursor: pointer;
+    position: relative;
+    left: 21px;
+}
+
+
+.arrow {
+    border: solid grey;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    position:relative;
+    left: 10px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

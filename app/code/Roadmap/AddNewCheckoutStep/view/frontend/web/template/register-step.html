@@ -1,0 +1,87 @@
+<!-- ko if: updateImportantValues()-->
+<li id="custom_code" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Register Step or Continue Guest'" data-role="title"></div>
+    <div id="pswd-message-not-valid" class="register-error-message">
+         <span>
+             <!--ko i18n: 'Your password is not valid !'--><!-- /ko -->
+         </span>
+    </div>
+    <div id="pswd-message-confirm" class="register-error-message">
+         <span>
+             <!--ko i18n: 'Password not confirmed !'--><!-- /ko -->
+         </span>
+    </div>
+    <div id="registration-message-success">
+         <span></span>
+    </div>
+    <div id="show-email-field" data-bind="fadeVisible: isEmailAvailable">
+        <div id="register-form">
+            <form data-bind="submit: registerNewCustomer" method="post">
+                <div class="input-text">
+                    <label for="inputted_email"><span data-bind="i18n: 'Email Address:'"></span></label>
+                    <input id="inputted_email" type="email" data-bind="value: validatedEmail, attr: {disabled: true, readonly: true}">
+                </div>
+                <div>
+                    <label for="password">
+                        <span data-bind="i18n: 'Password:'"></span>
+                    </label>
+                    <input class="input-text"
+                           id="password"
+                           type="password"
+                           data-bind=" attr: {required: true},
+                           event: {
+                           focus: onFocus,
+                           blur: onBlur,
+                           keyup: onKeyUp
+                           }">
+                    <label for="confirm_password">
+                        <span data-bind="i18n: 'Confirm your password:'"></span>
+                    </label>
+                    <input class="input-text"
+                           id="confirm_password"
+                           type="password"
+                           data-bind="attr: {required: true}, event: {focus: onFocusConfirm}">
+                    <div class="primary">
+                        <button data-role="opc-continue" type="submit" class="button action continue primary" id="register-button">
+                        <span>
+                            <!--ko i18n: 'Register'--><!-- /ko -->
+                        </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div id="pswd_info">
+                <h4>Password must meet the following requirements:</h4>
+                <ul>
+                    <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+                    <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                    <li id="number" class="invalid">At least <strong>one number</strong></li>
+                    <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-step-title"
+         class="step-content"
+         data-role="content">
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <div class="actions-toolbar">
+
+                <div class="checkbox">
+                    <input type="checkbox" id="continue-guest" data-bind="checked: continueGuest">
+                    <label for="continue-guest">Would you like continue as a guest?</label>
+                </div>
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary" id="register-step">
+                        <span>
+                            <!--ko i18n: 'Next'--><!-- /ko -->
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>
+<!-- /ko -->
+

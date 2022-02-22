@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * LiqPay Extension for Magento 2
+ *
+ * @author     Volodymyr Konstanchuk http://konstanchuk.com
+ * @copyright  Copyright (c) 2017 The authors
+ * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @updated Yaroslav Kozar 2021
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="LiqpayMagento\LiqPay\Api\LiqPayCallbackInterface"
+                type="LiqpayMagento\LiqPay\Model\LiqPayCallback"/>
+    <type name="Magento\Framework\Webapi\Rest\Request\DeserializerFactory" shared="true">
+        <arguments>
+            <argument name="deserializers" xsi:type="array">
+                <item name="application_urlencoded" xsi:type="array">
+                    <item name="type" xsi:type="string">application/x-www-form-urlencoded</item>
+                    <item name="model" xsi:type="string">LiqpayMagento\LiqPay\Webapi\Rest\Request\Deserializer\UrlEncoded</item>
+                </item>
+                <item name="application_json" xsi:type="array">
+                    <item name="type" xsi:type="string">application/json</item>
+                    <item name="model" xsi:type="string">Magento\Framework\Webapi\Rest\Request\Deserializer\Json</item>
+                </item>
+                <item name="application_xml" xsi:type="array">
+                    <item name="type" xsi:type="string">application/xml</item>
+                    <item name="model" xsi:type="string">Magento\Framework\Webapi\Rest\Request\Deserializer\Xml</item>
+                </item>
+                <item name="application_xhtml_xml" xsi:type="array">
+                    <item name="type" xsi:type="string">application/xhtml+xml</item>
+                    <item name="model" xsi:type="string">Magento\Framework\Webapi\Rest\Request\Deserializer\Xml</item>
+                </item>
+                <item name="text_xml" xsi:type="array">
+                    <item name="type" xsi:type="string">text/xml</item>
+                    <item name="model" xsi:type="string">Magento\Framework\Webapi\Rest\Request\Deserializer\Xml</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Webapi\Controller\Rest">
+        <plugin name="redirect_on_succes_page_after_rest"
+                type="LiqpayMagento\LiqPay\Model\RedirectPlugin" sortOrder="10" />
+    </type>
+</config>

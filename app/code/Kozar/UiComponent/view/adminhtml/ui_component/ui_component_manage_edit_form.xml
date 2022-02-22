@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd" component="Magento_Customer/js/form/components/form">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">ui_component_manage_edit_form.ui_component_manage_edit_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Form</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="reverseMetadataMerge" xsi:type="boolean">true</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back">
+                <url path="*/*/"/>
+                <class>back</class>
+                <label translate="true">Back</label>
+            </button>
+            <button name="save" >
+                <class>save primary</class>
+                <label translate="true">Save</label>
+            </button>
+        </buttons>
+        <namespace>ui_component_manage_edit_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>ui_component_manage_edit_form.ui_component_manage_edit_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="ui_component_manage_edit_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <aclResource>Kozar_UiComponent::ui_app</aclResource>
+        <dataProvider class="Kozar\UiComponent\Model\Adminhtml\DataProvider" name="ui_component_manage_edit_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="ui_component_information">
+        <settings>
+            <label translate="true">Current Study Pool Item Information</label>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+        </settings>
+        <field name="entity_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>entity_id</dataScope>
+            </settings>
+        </field>
+        <field name="name" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">name</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Name</label>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="description" sortOrder="20" formElement="textarea">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">description</item>
+                    <item name="rows" xsi:type="number">20</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Description</label>
+                <dataScope>description</dataScope>
+            </settings>
+        </field>
+        <field name="is_active" sortOrder="70" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">is_active</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Status</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options>
+                            <option name="0" xsi:type="array">
+                                <item name="value" xsi:type="number">0</item>
+                                <item name="label" xsi:type="string" translate="true">Inactive</item>
+                            </option>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="number">1</item>
+                                <item name="label" xsi:type="string" translate="true">Hold</item>
+                            </option>
+                            <option name="2" xsi:type="array">
+                                <item name="value" xsi:type="number">2</item>
+                                <item name="label" xsi:type="string" translate="true">Active</item>
+                            </option>
+                        </options>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="media_url" sortOrder="80">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">media_url</item>
+                    <item name="label" xsi:type="string" translate="true">Logo</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Kozar_UiComponent/image-preview</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="required" xsi:type="boolean">true</item>
+                    <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png svg</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="*/*/upload"/>
+                    </item>
+                    <item name="notice" xsi:type="string"><![CDATA[Allowed file types:jpg, jpeg, png.]]></item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+</form>

@@ -1,0 +1,12 @@
+<?php
+/**
+ * @var Chapagain\CustomerAttribute\Block\Customer\Account $block
+ */
+
+if ($block->isLoggedIn()) {
+    $src = $block->getBaseUrl() . 'pub/media/customer' . $block->getSrc(); ?>
+    <img src="<?php echo $src; ?>" width="25" height="25"/>
+<?php
+} else {
+    }
+?>

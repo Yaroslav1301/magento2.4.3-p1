@@ -1,0 +1,23 @@
+{
+  "name": "kozar/test-graph",
+  "version": "1.0.0",
+  "description": "N/A",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-authorization": "100.3.*",
+    "magento/module-customer": "102.0.*",
+    "magento/module-graph-ql": "100.3.*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Kozar\\TestGraph\\": ""
+    }
+  }
+}

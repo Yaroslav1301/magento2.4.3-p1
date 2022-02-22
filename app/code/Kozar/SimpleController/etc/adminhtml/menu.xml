@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<menu>
+    <add id="Kozar_SimpleController::greetings" title="Greetings" translate="title" module="Kozar_SimpleController" parent="Magento_Backend::content" sortOrder="50"  resource="Kozar_SimpleController::greetings"/>
+    <add id="Kozar_SimpleController::greetings_helloworld" title="Hello World" translate="title" module="Kozar_SimpleController" parent="Kozar_SimpleController::greetings" sortOrder="10" action="testing/index/index" resource="Kozar_SimpleController::greetings"/>
+</menu>
+</config>

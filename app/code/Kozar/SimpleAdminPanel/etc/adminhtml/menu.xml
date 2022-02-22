@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kozar_SimpleAdminPanel::menu" title="Custom Menu" module="Kozar_SimpleAdminPanel" sortOrder="10" resource="Kozar_SimpleAdminPanel::menu"/>
+        <add id="Kozar_SimpleAdminPanel::create" title="Create" module="Kozar_SimpleAdminPanel" sortOrder="10" parent="Kozar_SimpleAdminPanel::menu" action="test_router/index/create" resource="Kozar_SimpleAdminPanel::create"/>
+        <add id="Kozar_SimpleAdminPanel::delete" title="Delete" module="Kozar_SimpleAdminPanel" sortOrder="20" parent="Kozar_SimpleAdminPanel::menu" action="test_router/index/delete" resource="Kozar_SimpleAdminPanel::delete"/>
+        <add id="Kozar_SimpleAdminPanel::view" title="View" module="Kozar_SimpleAdminPanel" sortOrder="30" parent="Kozar_SimpleAdminPanel::menu" action="test_router/index/review" resource="Kozar_SimpleAdminPanel::view"/>
+    </menu>
+</config>

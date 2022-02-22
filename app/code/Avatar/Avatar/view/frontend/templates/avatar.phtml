@@ -1,0 +1,15 @@
+<?php /** @var \Avatar\Avatar\Block\Avatar */
+$url = $block->getFileUrl();
+$height = $block->getImageHeight();
+?>
+<div class="avatar">
+    <?php if ($url): ?>
+        <img src="<?=$url?>" height="<?=$height;?>" alt="avatar" />
+    <?php endif; ?>
+</div>
+<style>
+    .avatar{
+        float: left;
+        padding-left: 79%;
+    }
+</style>

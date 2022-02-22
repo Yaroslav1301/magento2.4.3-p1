@@ -1,0 +1,15 @@
+<?php
+/**
+ * @var \Kozar\Basic\Block\Index $block;
+ */
+
+if (is_array($discount_arr = $block->showDiscount())) {
+
+?>
+<p>С 8 до 10 утра скидка <?php echo $discount_arr[1]; ?> %</p>
+<p>Цена с учетом скидки : <?php echo $discount_arr[0];?> $</p>
+<?php
+} else {
+
+}
+?>

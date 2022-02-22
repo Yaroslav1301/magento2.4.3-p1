@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kozar_HelloWorld2::helloworld2"
+             title="Hello World2" module="Kozar_HelloWorld2"
+             sortOrder="51" resource="Kozar_HelloWorld2::helloworld2"/>
+        <add id="Kozar_HelloWorld2::post"
+             title="Manage Posts2" module="Kozar_HelloWorld2"
+             sortOrder="10" action="kozar_helloworld2/post/index"
+             resource="Kozar_HelloWorld2::post" parent="Kozar_HelloWorld2::helloworld2"/>
+
+        <add id="Kozar_HelloWorld2::hello_configuration"
+             title="Configuration2" module="Kozar_HelloWorld2"
+             sortOrder="99" parent="Kozar_HelloWorld2::helloworld2"
+             action="adminhtml/system_config/edit/section/helloworld2"
+             resource="Kozar_HelloWorld2::helloworld_configuration"/>
+    </menu>
+</config>

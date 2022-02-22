@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+<!--    Reload your custom section when customer make some action. In this case it will be logout-->
+    <action name="customer/account/logout">
+        <section name="customsection"/>
+    </action>
+    <action name="checkout/cart/add">
+        <section name="test_section"/>
+    </action>
+</config>

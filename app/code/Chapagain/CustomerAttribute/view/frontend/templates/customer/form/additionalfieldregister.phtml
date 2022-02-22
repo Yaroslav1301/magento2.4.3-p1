@@ -1,0 +1,56 @@
+<fieldset class="fieldset create account" data-hasrequired="<?php /* @escapeNotVerified */
+echo __('* Required Fields') ?>">
+    <legend class="legend">
+        <span>
+        <?php
+        /* @escapeNotVerified */
+        echo __('Additional Information')
+        ?>
+        </span>
+    </legend>
+
+    <p>
+    <div class="field my_customer_image ">
+        <label for="my_customer_image" class="label"><span><?php /* @escapeNotVerified */
+                echo __('Customer Image') ?></span></label>
+        <div class="control">
+            <input type="file" name="my_customer_image" id="my_customer_image" title="<?php /* @escapeNotVerified */
+            echo __('Customer Image') ?>" class="input-text" data-validate="{required:false}" onchange="return fileValidation()">
+        </div>
+        <script type="text/javascript">
+            function fileValidation() {
+                var fileInput =
+                    document.getElementById('my_customer_image');
+
+                var filePath = fileInput.value;
+
+                // Allowing file type
+                var allowedExtensions =
+                    /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+
+                if (!allowedExtensions.exec(filePath)) {
+                    alert('Invalid file type');
+                    fileInput.value = '';
+                    return false;
+                }
+                else
+                {
+
+                    // Image preview
+                    if (fileInput.files && fileInput.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            document.getElementById(
+                                'imagePreview').innerHTML =
+                                '<img src="' + e.target.result
+                                + '"/>';
+                        };
+
+                        reader.readAsDataURL(fileInput.files[0]);
+                    }
+                }
+            }
+        </script>
+    </div>
+    </p>
+</fieldset>

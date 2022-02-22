@@ -1,0 +1,22 @@
+<?php
+/**
+ * @var Roadmap\CustomizeCheckoutStep\Block\RenderComment $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+$customerComment = $block->getCustomerComment();
+?>
+<?php if (isset($customerComment)):?>
+<div class="block block-order-details-view">
+    <div class="block-content">
+        <div class="box box-order-shipping-method">
+            <strong class="box-title">
+                <span><?= $escaper->escapeHtml(__('Customer Comment')) ?></span>
+            </strong>
+            <div class="box-content">
+                <p><?=$escaper->escapeHtml(__($customerComment))?></p>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif;?>
+

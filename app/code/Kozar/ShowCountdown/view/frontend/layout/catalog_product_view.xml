@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--<referenceBlock name="product.info.addtocart.additional">
+                <block
+                    name="add_count_down"
+                    class="Kozar\ShowCountdown\Block\Index"
+                    template="Kozar_ShowCountdown::index.phtml"
+                />
+        </referenceBlock>-->
+        <referenceContainer name="product.info.main">
+            <block
+                name="add_count_down"
+                class="Kozar\ShowCountdown\Block\Index"
+                template="Kozar_ShowCountdown::index.phtml"
+                after="product.info.addto"
+            />
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+   <system>
+       <tab id="settings" translate="label" sortOrder="10">
+           <label>Qnty</label>
+       </tab>
+       <section id="setQnty" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1">
+           <class>separator-top</class>
+           <label>Set Qnty less X</label>
+           <tab>settings</tab>
+          <resource>Kozar_TestTask1::qnty_configuration</resource>
+           <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+               <label>Setting Qnty X</label>
+               <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>Module Enable</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+               <field id="kozar" translate="label" type="text" sortOrder="4" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>Qnty show less than X= </label>
+               </field>
+           </group>
+       </section>
+   </system>
+</config>

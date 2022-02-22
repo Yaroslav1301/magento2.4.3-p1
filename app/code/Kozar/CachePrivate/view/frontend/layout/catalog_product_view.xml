@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View" name="custom_section" after="-" template="Kozar_CachePrivate::custom_section.phtml"/>
+            <block class="Magento\Catalog\Block\Product\View" name="test_section" after="-" template="Kozar_CachePrivate::test_section.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="test_section" xsi:type="array">
+                                <item name="component" xsi:type="string">Kozar_CachePrivate/js/test_section</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

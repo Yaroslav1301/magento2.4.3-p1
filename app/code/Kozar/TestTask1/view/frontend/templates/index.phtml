@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var Kozar\TestTask1\Block\Index $block
+ */
+$arr = $block->getInformation('kozar','enable');
+$enable = $arr[2];
+if ($enable) {
+    $value_X = $arr[0];
+    $qty = $arr[1];
+
+    if ($value_X > $qty) {
+        ?>
+        <p><?php echo "Заканчивается"; ?></>
+        <?php
+    }
+    ?>
+    <?php
+}
+?>
+
+
+
+
+

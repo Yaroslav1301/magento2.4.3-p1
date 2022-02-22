@@ -1,0 +1,24 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="shipping_options" translate="label" type="text" sortOrder="1001" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Kozar Shipping Options</label>
+            <tab>sales</tab>
+            <resource>Kozar_UiComponent::shipping_options</resource>
+            <group id="shipping_dual_confirmation" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Dual confirmation</label>
+                <field id="shipping_dual_confirmation_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="shipping_dual_confirmation_title" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Popup Title</label>
+                    <comment><![CDATA[Title for popup window]]></comment>
+                </field>
+                <field id="shipping_dual_confirmation_desc" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Description</label>
+                    <comment><![CDATA[Body description for popup window]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

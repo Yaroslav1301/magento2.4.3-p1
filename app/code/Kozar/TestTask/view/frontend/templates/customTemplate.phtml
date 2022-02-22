@@ -1,0 +1,23 @@
+<?php
+/**
+ * @var Kozar\TestTask\Block\Product\ListProduct $block
+ */
+
+$rubArr = $block->getInformation("RUB","RUBCourse");
+$uahArr = $block->getInformation("UAH","UAHCourse");
+$eurArr = $block->getInformation("EUR","EURCourse");
+?>
+
+<?php
+if ($rubArr[0]) {?>
+    <p>RUB = <?php echo $rubArr[1];?></p>
+    <?php
+}if ($uahArr[0]) {?>
+<p>UAH = <?php echo $uahArr[1];?></p>
+<?php
+}if ($eurArr[0]) {?>
+<p>EUR = <?php echo $rubArr[1];?></p>
+<?php
+}
+?>
+

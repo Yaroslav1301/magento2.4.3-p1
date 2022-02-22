@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var Kozar\CacheTest\Block\Index $block
+ */
+$viewModel = $block->getViewModel();
+?>
+<?php if ($block->isAdult()) :?>
+    <p>Some text can be added here </p>
+    <p><?=$viewModel->getSomeText()?></p>
+<?php endif;?>
+
+
+

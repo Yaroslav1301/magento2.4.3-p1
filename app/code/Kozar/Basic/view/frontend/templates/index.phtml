@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var \Kozar\Basic\Block\Index $block;
+ */
+$arr = $block->getAllowToShowBlock();
+if ($arr[0]) {
+?>
+<p>Продажа даного товара заканчивается: <?=$arr[1]?></p>
+<?php
+}else {
+
+}
+?>
+

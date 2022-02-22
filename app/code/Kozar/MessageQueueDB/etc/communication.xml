@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <topic name="new_customer.created" request="Kozar\MessageQueueDB\Api\Data\SampleDataInterface">
+        <handler name="new_customer_created_handler" type="Kozar\MessageQueueDB\Model\Queue\Consumer" method="processMessage"/>
+    </topic>
+</config>

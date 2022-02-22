@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+   <system>
+       <tab id="exchange" translate="label" sortOrder="10">
+           <label>Exchange</label>
+       </tab>
+       <section id="setCourse" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1">
+           <class>separator-top</class>
+           <label>Set exchange course</label>
+           <tab>exchange</tab>
+          <resource>Kozar_TestTask::exchange_configuration</resource>
+           <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+               <label>Setting exchange course</label>
+               <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>Module Enable</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+               <field id="UAH" translate="label" type="select" sortOrder="2" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>UAH</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+               <field id="UAHCourse" translate="label" type="text" sortOrder="2" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>UAHCourse</label>
+               </field>
+               <field id="RUB" translate="label" type="select" sortOrder="3" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>RUB</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+               <field id="RUBCourse" translate="label" type="text" sortOrder="3" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>RUBCourse</label>
+               </field>
+               <field id="EUR" translate="label" type="select" sortOrder="4" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>EUR</label>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+               </field>
+               <field id="EURCourse" translate="label" type="text" sortOrder="4" showInDefault="1"  showInWebsite="0" showInStore="0">
+                   <label>EURCourse</label>
+               </field>
+           </group>
+       </section>
+   </system>
+</config>

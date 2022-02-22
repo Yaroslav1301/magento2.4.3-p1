@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="changeBreadcrumbs" type="Magefox\Example\Plugin\BreadcrumbsPlugin" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Cms\Model\Page">
+        <plugin name="changePage" type="Magefox\Example\Plugin\PagePlugin" sortOrder="1" disabled="false"/>
+    </type>
+</config>

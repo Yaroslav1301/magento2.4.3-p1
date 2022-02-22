@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var \Kozar\ChangeProductImage\Block\Index $block;
+ *
+ */
+// by id
+$id = '1021';
+$_product = $block->getProductById($id);
+
+//by sku
+//$sku = 'PRODUCT_SKU';
+//$_product = $block->getProductBySku($sku);
+
+$imageId = 'product_base_image';
+$width = 100;
+$height = 200;
+$resizedImageUrl = $block->resizeImage($_product, 'product_base_image', $width, $height)->getUrl();
+
+
+?>
+
+<img src="<?php echo $resizedImageUrl?>" alt="<?php echo $_product->getName()?>"/>
+
+

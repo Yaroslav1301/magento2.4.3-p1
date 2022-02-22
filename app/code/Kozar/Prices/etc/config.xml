@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <setPrices>
+            <general>
+                <enable>1</enable>
+                <base_price>1</base_price>
+                <final_price>1</final_price>
+                <special_price>1</special_price>
+                <tier_price>1</tier_price>
+                <catalog_rule_price>1</catalog_rule_price>
+            </general>
+        </setPrices>
+    </default>
+</config>

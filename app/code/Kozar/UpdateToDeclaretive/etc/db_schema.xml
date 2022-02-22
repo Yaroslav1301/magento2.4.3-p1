@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="quote_item_file" resource="default" engine="innodb" comment="Quote Item File Table">
+    <column xsi:type="int" name="entity_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Entity ID"/>
+    <column xsi:type="varchar" name="filename" nullable="false" length="255" comment="Filename"/>
+    <column xsi:type="varchar" name="location" nullable="false" length="255" comment="Location of file"/>
+    <column xsi:type="int" name="quote_item_item_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Item Id"/>
+    <column xsi:type="text" name="test_name" nullable="false" comment="Test"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="entity_id"/>
+    </constraint>
+    <constraint xsi:type="foreign" referenceId="QUOTE_ITEM_FILE_QUOTE_ITEM_ITEM_ID_QUOTE_ITEM_ITEM_ID" table="quote_item_file" column="quote_item_item_id" referenceTable="quote_item" referenceColumn="item_id" onDelete="CASCADE"/>
+  </table>
+</schema>

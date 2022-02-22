@@ -1,0 +1,47 @@
+<?php
+/**
+ * @var \Kozar\ShowCountdown\Block\Index $block;
+ */
+$special_arr = $block->getSpecial();
+$rule_arr = $block->getRule();
+$text_event = "";
+
+if ($special_arr['show_special'] || $rule_arr['show_rule']) {
+    $result_arr = $block->selectShorterDate($special_arr, $rule_arr);
+    $text_event = $result_arr['right_text'];
+    $right_date = $result_arr['right_date'];
+    $all_price_rules = $block->getAllCatalogRulePrices();
+    if ($all_price_rules) {
+        ?><p><b>Active catalog rule prices:</b></p><?php
+        foreach ($all_price_rules as $value) {
+           ?> <p><?php echo "Name: ". $value['name'] ." закінчується ". $value['to_date'];?></p> <?php
+        }
+    }
+    if ($special_arr['show_special']) {
+        ?><p><b>Special price закінчується: </b><?=$special_arr['date_special_to']?><p>
+    <?php
+    }
+    ?><p><?=$text_event?></p>
+<div id="getting-started"></div>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'countdown'
+    ], function (
+        $, countdown
+    ) {
+        jQuery("#getting-started")
+            .countdown("<?=$right_date?>", function(event) {
+                jQuery(this).text(
+                    event.strftime('%D days %H:%M:%S')
+                );
+            });
+    });
+</script>
+<?php
+}
+?>
+
+
+
+

@@ -1,0 +1,19 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+/** @var $block Kozar\ProductImagesUploader\Block\Adminhtml\Product\Edit\Magic360 */
+
+?>
+<div class="fieldset-wrapper admin__fieldset-section">
+    <div class="fieldset-wrapper-title" tabindex="-1">
+        <strong class="title">
+            <span><?= __('Images'); ?></span>
+        </strong>
+    </div>
+    <div class="admin__fieldset-wrapper-content">
+        <fieldset class="admin__fieldset">
+            <?= $block->getChildHtml('custom_gallery'); ?>
+        </fieldset>
+    </div>
+</div>

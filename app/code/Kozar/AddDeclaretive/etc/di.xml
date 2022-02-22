@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Kozar\AddDeclaretive\Api\Data\StudentInterface" type="Kozar\AddDeclaretive\Model\Student" />
+    <preference for="Kozar\AddDeclaretive\Api\Data\StudentSearchResultInterface" type="Kozar\AddDeclaretive\Model\StudentSearchResult" />
+    <preference for="Kozar\AddDeclaretive\Api\StudentRepositoryInterface" type="Kozar\AddDeclaretive\Model\StudentRepository" />
+</config>

@@ -1,0 +1,15 @@
+{
+    "quote_item_file": {
+        "column": {
+            "entity_id": true,
+            "filename": true,
+            "location": true,
+            "quote_item_item_id": true,
+            "test_name": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "QUOTE_ITEM_FILE_QUOTE_ITEM_ITEM_ID_QUOTE_ITEM_ITEM_ID": true
+        }
+    }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kozar_UiComponent::ui_app" module="Kozar_UiComponent" resource="Kozar_UiComponent::ui_app" sortOrder="35" title="UI Component" translate="title"/>
+        <add id="Kozar_UiComponent::ui_apps" title="UI Components" module="Kozar_UiComponent" translate="title" parent="Kozar_UiComponent::ui_app" resource="Kozar_UiComponent::ui_app"/>
+        <add id="Kozar_UiComponent::kozar_ui_app" title="Kozar UI Component Study" module="Kozar_UiComponent" sortOrder="10" translate="title" action="ui_component/manage" parent="Kozar_UiComponent::ui_app" resource="Kozar_UiComponent::ui_app"/>
+    </menu>
+</config>

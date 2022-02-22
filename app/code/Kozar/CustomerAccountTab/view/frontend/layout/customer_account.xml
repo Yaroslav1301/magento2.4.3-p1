@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-custom-tab">
+                <arguments>
+                    <argument name="path" xsi:type="string">routesname/customer/index</argument>
+                    <argument name="label" xsi:type="string">Custom Tab Name Here</argument>
+                </arguments>
+            </block>
+            <referenceBlock name="customer.account.link.back">
+                <block class="Magento\Framework\View\Element\Template" name="custom_template_for_order_page" template="Kozar_CustomerAccountTab::orderAdditionalPage.phtml" />
+            </referenceBlock>
+        </referenceBlock>
+    </body>
+</page>

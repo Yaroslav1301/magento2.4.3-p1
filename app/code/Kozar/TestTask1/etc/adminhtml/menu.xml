@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kozar_TestTask1::testtask" title="SetQnty" module="Kozar_TestTask1" sortOrder="30" resource="Kozar_TestTask1::testtask"/>
+        <add id="Kozar_TestTask1::settings" title="Set minimal qnty X" module="Kozar_TestTask1" sortOrder="10" action="adminhtml/system_config/edit/section/setQnty" resource="Kozar_TestTask1::settings" parent="Kozar_TestTask1::testtask"/>
+    </menu>
+</config>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kozar_TestTask::testtask" title="TestTask" module="Kozar_TestTask" sortOrder="30" resource="Kozar_TestTask::testtask"/>
+        <add id="Kozar_TestTask::exchange" title="Set exchange course" module="Kozar_TestTask" sortOrder="10" action="adminhtml/system_config/edit/section/setCourse" resource="Kozar_TestTask::exchange" parent="Kozar_TestTask::testtask"/>
+    </menu>
+</config>

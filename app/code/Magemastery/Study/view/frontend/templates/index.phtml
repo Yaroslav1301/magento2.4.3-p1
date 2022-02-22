@@ -1,0 +1,9 @@
+
+<?php
+use Magento\Framework\View\Element\Template;
+/** @var Template $block */
+/** @var ProductData $productData */
+$productData = $block->getData('view_model');
+?>
+<p><?= $block->getData('custom_parameter')?></p>
+<h1><?= $productData->getProductBySku('sku')?></h1>

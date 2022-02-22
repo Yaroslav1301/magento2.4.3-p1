@@ -1,0 +1,22 @@
+{
+    "name": "kozar/module-rabbitmq",
+    "description": "Rabbit MQ Messaging Example",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "kozar.yarolsav1@gmail.com",
+            "name": "Kozar"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Kozar\\RabbitMQ\\": ""
+        }
+    }
+}

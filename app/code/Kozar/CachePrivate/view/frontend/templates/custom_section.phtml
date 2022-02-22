@@ -1,0 +1,23 @@
+<div class="kozar-customsection" data-bind="scope: 'section'">
+    <p data-bind="text: customsection().msg"></p>
+</div>
+
+<script type="text/x-magento-init">
+    {
+    	"*": {
+        	"Magento_Ui/js/core/app": {
+            	"components": {
+                	"section": {
+                    	"component": "Kozar_CachePrivate/js/section"
+                	}
+            	}
+        	}
+    	}
+    }
+</script>
+
+
+
+
+
+

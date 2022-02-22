@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" identity="true" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="text" name="title" nullable="false"  comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
+        <column xsi:type="int" name="foreign_key" unsigned="true" nullable="false" comment="Foreign key code"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+        <index referenceId="INDEX_SEVERITY" indexType="btree">
+            <column name="severity"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table"
+                    column="foreign_key" referenceTable="table_for_foreign_key" referenceColumn="id_column" onDelete="NO ACTION"/>
+    </table>
+
+    <table name="table_for_foreign_key">
+        <column xsi:type="int" name="id_column" identity="true" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="text" name="title" nullable="false"  comment="Title"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>

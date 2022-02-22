@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kozar_AddCancelOrder::canceled_order"
+             title="Canceled Order"
+             module="Kozar_AddCancelOrder"
+             sortOrder="100"
+             parent="Magento_Sales::sales_operation"
+             action="canceled_orders/post/index"
+             resource="Kozar_AddCancelOrder::canceled_order"
+        />
+    </menu>
+</config>

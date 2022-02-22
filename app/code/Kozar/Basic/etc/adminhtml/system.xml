@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="multi_select_tab" translate="label" sortOrder="10">
+            <label>MULTISELECTTAB</label>
+        </tab>
+        <section id="multi_select_section" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1">
+            <class>separator-top</class>
+            <label>Multi Select Section</label>
+            <tab>multi_select_tab</tab>
+            <resource>Kozar_Basic::multi_select_tab_configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Multi Select Group</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1"  showInWebsite="0" showInStore="0">
+                    <label>First Task</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="multiselect" translate="label" type="select" sortOrder="1" showInDefault="1"  showInWebsite="0" showInStore="0">
+                    <label>Multi Select Field</label>
+                    <source_model>Kozar\Basic\Model\Config\Source\Custom</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="enable_additional" translate="label" type="select" sortOrder="4" showInDefault="1"  showInWebsite="0" showInStore="0">
+                    <label>First Task Additional</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="mydate" translate="label" sortOrder="5" type="date" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sales completion date</label>
+                    <frontend_model>Kozar\Basic\Block\Adminhtml\System\Config\Date</frontend_model>
+                </field>
+                <field id="multiselect_additional" translate="label" type="select" sortOrder="6" showInDefault="1"  showInWebsite="0" showInStore="0">
+                    <label>Multi Select Field Additional</label>
+                    <source_model>Kozar\Basic\Model\Config\Source\Custom</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="discount_enable" translate="label" type="select" sortOrder="7" showInDefault="1"  showInWebsite="0" showInStore="0">
+                    <label>Discount enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="discount_text" translate="label" type="text" sortOrder="8" showInDefault="1"  showInWebsite="0" showInStore="0">
+                    <label>Discount percent</label>
+                </field>
+                <field id="cron_enable" translate="label" type="select" sortOrder="9" showInDefault="1"  showInWebsite="0" showInStore="0">
+                    <label>Cron enable automatic</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_model>Kozar\Basic\Block\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

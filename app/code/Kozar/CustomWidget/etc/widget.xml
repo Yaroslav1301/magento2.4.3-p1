@@ -1,0 +1,130 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Kozar\CustomWidget\Block\Widget\Posts" id="kozar_posts">
+        <label translate="true">Kozar Product Listing Tabs</label>
+        <description>Widget in Magento2</description>
+
+        <parameters>
+            <!--Tab1-->
+            <parameter name="delimetr1" xsi:type="block" required="false" visible="true" sort_order="0">
+                <block class="Kozar\CustomWidget\Block\Widget\LineSeparator">
+                    <data>
+                        <item name="label" xsi:type="array">
+                            <item name="tab" xsi:type="string" translate="true">First Tab</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="title_tab1" xsi:type="text"  visible="true" sort_order="1" >
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_pager_tab1" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="2">
+                <label translate="true">Display Page Control</label>
+            </parameter>
+            <parameter name="products_per_page_tab1" xsi:type="text" required="true" visible="true" sort_order="3">
+                <label translate="true">Number of Products per Page</label>
+                <depends>
+                    <parameter name="show_pager_tab1" value="1" />
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="products_count_tab1" xsi:type="text" required="true" visible="true" sort_order="4">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="products" xsi:type="conditions" visible="true" required="true" sort_order="5" class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+                <label translate="true">Conditions</label>
+            </parameter>
+
+            <!--Tab2-->
+            <parameter name="delimetr2" xsi:type="block" required="false" visible="true" sort_order="7">
+                <block class="Kozar\CustomWidget\Block\Widget\LineSeparator">
+                    <data>
+                        <item name="label" xsi:type="array">
+                            <item name="tab" xsi:type="string" translate="true">Second Tab</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="title_tab2" xsi:type="text"  visible="true" sort_order="8" >
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_pager_tab2" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="9">
+                <label translate="true">Display Page Control</label>
+            </parameter>
+            <parameter name="products_per_page_tab2" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label translate="true">Number of Products per Page</label>
+                <depends>
+                    <parameter name="show_pager_tab2" value="1" />
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="products_count_tab2" xsi:type="text" required="true" visible="true" sort_order="11">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="Conditions2Tab" xsi:type="block" required="true" visible="true" sort_order="12">
+                <label>Conditions</label>
+                <block class="Kozar\CustomWidget\Block\Widget\Conditions">
+                    <data>
+                        <item name="condition" xsi:type="array">
+                            <item name="id2" xsi:type="string" translate="true">3</item>
+                        </item>
+                        <item name="type_of_rule_model" xsi:type="string" translate="true">product</item>
+                    </data>
+                </block>
+            </parameter>
+
+            <!--Tab3-->
+            <parameter name="delimetr3" xsi:type="block" required="false" visible="true" sort_order="13">
+                <block class="Kozar\CustomWidget\Block\Widget\LineSeparator">
+                    <data>
+                        <item name="label" xsi:type="array">
+                            <item name="tab" xsi:type="string" translate="true">Third Tab</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="title_tab3" xsi:type="text"  visible="true" sort_order="14" >
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_pager_tab3" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="15">
+                <label translate="true">Display Page Control</label>
+            </parameter>
+            <parameter name="products_per_page_tab3" xsi:type="text" required="true" visible="true" sort_order="16">
+                <label translate="true">Number of Products per Page</label>
+                <depends>
+                    <parameter name="show_pager_tab3" value="1" />
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="products_count_tab3" xsi:type="text" required="true" visible="true" sort_order="17">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="Conditions3Tab" xsi:type="block" required="true" visible="true" sort_order="18">
+                <label>Conditions</label>
+                <block class="Kozar\CustomWidget\Block\Widget\Conditions">
+                    <data>
+                        <item name="condition" xsi:type="array">
+                            <item name="id3" xsi:type="string" translate="true">4</item>
+                        </item>
+                        <item name="type_of_rule_model" xsi:type="string" translate="true">product</item>
+                    </data>
+                </block>
+            </parameter>
+
+            <parameter name="template" xsi:type="select" required="true" visible="true" sort_order="19">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Kozar_CustomWidget::widget/posts.phtml" selected="true">
+                        <label translate="true">Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

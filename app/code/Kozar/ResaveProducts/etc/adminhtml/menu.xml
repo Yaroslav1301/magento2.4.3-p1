@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kozar_ResaveProducts::manager" title="Test Menu" module="Kozar_ResaveProducts" sortOrder="10" resource="Kozar_ResaveProducts::manager"/>
+        <add id="Kozar_ResaveProducts::employee" title="Test Controller" module="Kozar_ResaveProducts" sortOrder="0" parent="Kozar_ResaveProducts::manager"
+             action="kozar_resave_products/products/resaveproducts" resource="Kozar_ResaveProducts::employee"/>
+    </menu>
+</config>

@@ -1,0 +1,11 @@
+<div data-role="test-section" data-bind="scope: 'test_section'">
+    <span class="content-type" data-bind="text: test_section().test"></span>
+</div>
+
+<script type="text/x-magento-init">
+{
+    "[data-role=test-section]": {
+        "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout(); ?>
+    }
+}
+</script>

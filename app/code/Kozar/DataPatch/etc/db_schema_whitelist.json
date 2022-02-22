@@ -1,0 +1,28 @@
+{
+    "declarative_table": {
+        "column": {
+            "id_column": true,
+            "severity": true,
+            "title": true,
+            "time_occurred": true,
+            "foreign_key": true
+        },
+        "index": {
+            "DECLARATIVE_TABLE_SEVERITY": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "DECLARATIVE_TABLE_FOREIGN_KEY_TABLE_FOR_FOREIGN_KEY_ID_COLUMN": true
+        }
+    },
+    "table_for_foreign_key": {
+        "column": {
+            "id_column": true,
+            "severity": true,
+            "title": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

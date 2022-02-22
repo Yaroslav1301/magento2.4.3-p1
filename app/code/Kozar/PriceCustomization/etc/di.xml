@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Kozar\PriceCustomization\Pricing\Price\Pool" type="Magento\Framework\Pricing\Price\Pool">
+        <arguments>
+            <argument name="prices" xsi:type="array">
+                <item name="custom_price" xsi:type="string">Kozar\PriceCustomization\Pricing\Price\CustomModelPrice</item>
+            </argument>
+            <argument name="target" xsi:type="object">Magento\Catalog\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Kozar\PriceCustomization\Pricing\Price\Collection" type="Magento\Framework\Pricing\Price\Collection">
+        <arguments>
+            <argument name="pool" xsi:type="object">Kozar\PriceCustomization\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\Pricing\PriceInfo\Factory">
+        <arguments>
+            <argument name="types" xsi:type="array">
+                <item name="customTest" xsi:type="array">
+                    <item name="infoClass" xsi:type="string">Magento\Framework\Pricing\PriceInfo\Base</item>
+                    <item name="prices" xsi:type="string">Kozar\PriceCustomization\Pricing\Price\Collection</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+<!--    Lines 27 - 33 adding price model and you can get it in each final_price.phtml template-->
+    <virtualType name="Magento\Catalog\Pricing\Price\Pool">
+        <arguments>
+            <argument name="prices" xsi:type="array">
+                <item name="custom_price" xsi:type="string">Kozar\PriceCustomization\Pricing\Price\CustomModelPrice</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

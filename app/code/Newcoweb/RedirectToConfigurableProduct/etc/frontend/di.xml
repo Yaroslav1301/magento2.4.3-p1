@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\PageCache\Identifier">
+        <plugin name="create_unique_identifier"
+                type="Newcoweb\RedirectToConfigurableProduct\Plugin\IndetifierPlugin"
+                sortOrder="5"/>
+    </type>
+</config>

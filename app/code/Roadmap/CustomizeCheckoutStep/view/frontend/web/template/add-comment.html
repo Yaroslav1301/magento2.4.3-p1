@@ -1,0 +1,14 @@
+<div id="leave-comment" data-bind="click: showCommentArea" class="comment-block">
+    <span>
+        <!-- ko i18n: 'Leave your comment' --><!-- /ko -->
+        <i class="arrow down" id="comment-arrow"></i>
+    </span>
+</div>
+<div class="input-text" id="customer-comment-block">
+    <label for="customer-comment"></label>
+    <textarea placeholder="Please leave your comment for this order here" rows="10" cols="15" id="customer-comment"
+    data-bind="event: {change: putCommentToQuote}"></textarea>
+</div>
+
+
+
