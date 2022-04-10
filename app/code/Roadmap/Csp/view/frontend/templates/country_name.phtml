@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<p id="country_name">
+    <img src="https://image.similarpng.com/very-thumbnail/2021/01/Elegant-golden-best-choice-badge-isolated-premium-vector-PNG.png" alt="Best Choice" height="20" width="20"/>
+    <?=$escaper->escapeHtml(__('Your location: '))?>
+</p>
+<script>
+    require(['jquery'], function($){
+        $.getJSON("https://api.ip2loc.com/zvnQ9w53yVniYHDZAcp0OQedGpEW9khI/detect?include=country_name,ip,country_emoji", function(result){
+            if(result.country_name){
+                $("#country_name").append(result.country_name + ' ' + result.country_emoji);
+            }
+        });
+    });
+</script>
+
+

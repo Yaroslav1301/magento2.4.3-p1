@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+?>
+<div>
+    <span>This is a test form that allows to send post request to the test site: https://my-site.com</span>
+    <form action="https://my-site.com" method="post">
+        <label for="POST-name">Name:</label>
+        <input id="POST-name" type="text" name="name">
+        <input type="submit" value="Save" id="save_button">
+    </form>
+</div>
+<?= $secureRenderer->renderTag('script', ['type' => 'text/javascript'], "alert('I am a whitelisted script');", false); ?>
+<?= $secureRenderer->renderEventListenerAsTag('onclick', 'alert("Clicked Save button!");', '#save_button'); ?>
+

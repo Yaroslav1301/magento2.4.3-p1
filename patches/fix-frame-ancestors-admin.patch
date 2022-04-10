@@ -1,0 +1,13 @@
+diff --git a/vendor/magento/module-csp/etc/config.xml b/vendor/magento/module-csp/etc/config.xml
+index f0a7094..3c4f5bd 100644
+--- a/vendor/magento/module-csp/etc/config.xml
++++ b/vendor/magento/module-csp/etc/config.xml
+@@ -217,7 +217,7 @@
+                     <frame-ancestors>
+                         <policy_id>frame-ancestors</policy_id>
+                         <self>1</self>
+-                        <inline>1</inline>
++                        <inline>0</inline>
+                         <eval>0</eval>
+                         <dynamic>0</dynamic>
+                     </frame-ancestors>

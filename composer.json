@@ -101,6 +101,9 @@
         "patches": {
             "magento/module-re-captcha-checkout": {
                 "Patch description": "patches/fix-place-order-recaptcha-is-set.patch"
+            },
+            "magento/module-csp": {
+                "Fix admin CSP doest not support unsafe-inline": "patches/fix-frame-ancestors-admin.patch"
             }
         }
     }
