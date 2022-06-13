@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="gift_for_products" resource="default" engine="innodb" comment="Gift Fot Products Table">
+        <column xsi:type="int" name="gift_id" nullable="false" unsigned="false" identity="true" comment="Gift ID"/>
+        <column xsi:type="varchar" name="name" length="255" nullable="true" comment="Gift Name"/>
+        <column xsi:type="text" name="description" comment="Gift Description"/>
+        <column xsi:type="smallint" name="is_active" padding="6" identity="false" nullable="false" comment="Gift Status"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="text" name="media_url" comment="Path to media url"/>
+        <column xsi:type="varchar" length="64" name="product_sku" nullable="false" comment="Related Product SKU"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="gift_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="GIFT_PRD_PRD_SKU_CAT_PRD_ENTT_SKU" table="gift_for_products"
+                       column="product_sku" referenceTable="catalog_product_entity" referenceColumn="sku"
+                       onDelete="CASCADE"/>
+        <index referenceId="GIFT_FOR_PRODUCTS_SKU" indexType="btree">
+            <column name="product_sku"/>
+        </index>
+        <index referenceId="GIFT_FOR_PRODUCTS_NAME" indexType="fulltext">
+            <column name="name"/>
+        </index>
+    </table>
+</schema>

@@ -1,0 +1,21 @@
+{
+    "gift_for_products": {
+        "column": {
+            "gift_id": true,
+            "name": true,
+            "description": true,
+            "is_active": true,
+            "created_at": true,
+            "media_url": true,
+            "product_sku": true
+        },
+        "index": {
+            "GIFT_FOR_PRODUCTS_PRODUCT_SKU": true,
+            "GIFT_FOR_PRODUCTS_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "GIFT_FOR_PRODUCTS_PRODUCT_SKU_CATALOG_PRODUCT_ENTITY_SKU": true
+        }
+    }
+}

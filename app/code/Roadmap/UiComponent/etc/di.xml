@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Roadmap\UiComponent\Api\Data\GiftInterface" type="Roadmap\UiComponent\Model\Gift"/>
+    <preference for="Roadmap\UiComponent\Api\GiftRepositoryInterface" type="Roadmap\UiComponent\Model\GiftRepository"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="gift_page_index_listing_data_source"
+                      xsi:type="string">Roadmap\UiComponent\Model\ResourceModel\Gift\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Roadmap\UiComponent\Model\ResourceModel\Gift\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">gift_for_products</argument>
+            <argument name="resourceModel" xsi:type="string">Roadmap\UiComponent\Model\ResourceModel\Gift</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Roadmap\UiComponent\ReferenceImageUpload" type="Roadmap\UiComponent\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">roadmap/tmp/gift</argument>
+            <argument name="basePath" xsi:type="string">roadmap/gift</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+            <argument name="allowedMimeTypes" xsi:type="array">
+                <item name="jpg" xsi:type="string">image/jpg</item>
+                <item name="jpeg" xsi:type="string">image/jpeg</item>
+                <item name="gif" xsi:type="string">image/gif</item>
+                <item name="png" xsi:type="string">image/png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Roadmap\UiComponent\Controller\Adminhtml\Page\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Roadmap\UiComponent\ReferenceImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Roadmap\UiComponent\Block\SuggestGift">
+        <arguments>
+            <argument name="options" xsi:type="object">Roadmap\UiComponent\Model\Suggest\Customer\Gift\Options\Proxy</argument>
+        </arguments>
+    </type>
+</config>

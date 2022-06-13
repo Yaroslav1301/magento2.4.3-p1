@@ -1,0 +1,22 @@
+{
+    "name": "roadmap/ui-component",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-ui": "101.2.*",
+        "magento/module-backend": "102.0.*"
+    },
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Roadmap\\UiComponent\\": ""
+        }
+    }
+}

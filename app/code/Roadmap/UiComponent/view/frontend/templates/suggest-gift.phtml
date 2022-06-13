@@ -1,0 +1,100 @@
+<?php
+/**
+ * @var \Roadmap\UiComponent\Block\SuggestGift $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+
+<div class="row" data-bind="scope: 'suggest-gift'">
+    <div class="col-md-8">
+        <form name="addData" method="post" id="addData" class="form"
+              action="<?= $block->getActionUrl() ?>"
+              data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>"
+              data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset">
+                <legend class="legend">
+                    <span data-bind="text: formTitle"></span>
+                </legend>
+                <fieldset class="fieldset row">
+                    <div class="fields col-md-6">
+                        <div class="field name required">
+                            <label class="label" for="title">
+                                <span><?= $escaper->escapeHtmlAttr(__('Name')) ?></span>
+                            </label>
+                            <div class="control">
+                                <input name="name" id="name" title="Name" value="" class="input-text" type="text"
+                                       data-validate="{required:true, 'validate-alphanum-with-spaces':true}">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="fieldset row">
+                    <div class="fields col-md-6">
+                        <div class="field name required">
+                            <label class="label" for="file-uploader">
+                                <span><?= $escaper->escapeHtmlAttr(__('Image Uploader')) ?></span>
+                            </label>
+                            <div class="control" id="file-uploader">
+                                <div class="upload-wrapper" data-bind="scope: 'uploader'" >
+                                    <!-- ko template: getTemplate() --><!-- /ko -->
+                                    <input name="image-file-path" id="image-file-path"
+                                           data-bind="value: uploadedImagePath" type="text" hidden/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="fieldset">
+                    <div class="field required">
+                        <label class="label"><?php echo __('Select Product SKU:') ?></label>
+                        <div data-bind="scope: 'sku-selector'">
+                            <!-- ko template: getTemplate() --><!-- /ko -->
+                            <input name="sku" id="sku"
+                                   data-bind="value: selectedSku" type="text" hidden/>
+                        </div>
+                    </div>
+                </fieldset>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" class="action submit primary" title="Save">
+                        <span><?= $escaper->escapeHtmlAttr(__('Send')) ?></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*":{
+            "Magento_Ui/js/core/app": {
+                "components":{
+                    "suggest-gift":{
+                        "component": "Roadmap_UiComponent/js/suggest-gift"
+                    },
+                    "uploader": {
+                        "component":"Roadmap_UiComponent/js/form/element/file-uploader",
+                        "template": "ui/form/element/uploader/uploader",
+                        "previewTmpl":"Roadmap_UiComponent/image-preview",
+                         "dataScope" : "suggest-image-uploader",
+                         "uploaderConfig": {
+                         "url": "<?= $block->getSaveImageUrl()?>"
+                         }
+                    },
+                    "sku-selector": {
+                        "component": "Roadmap_UiComponent/js/form/element/ui-select",
+                        "template": "ui/grid/filters/elements/ui-select",
+                        "filterOptions": true,
+                        "levelsVisibility": "1",
+                        "multiple": false,
+                        "showCheckbox": true,
+                        "options": <?= $block->getSkuOption()?>
+                    }
+                }
+            }
+        }
+    }
+</script>
+
