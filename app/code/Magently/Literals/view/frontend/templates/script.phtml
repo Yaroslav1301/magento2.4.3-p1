@@ -1,0 +1,21 @@
+<div data-bind="scope: 'example'">
+    <h2 data-bind="text: componentGreeting"></h2>
+    <h2 data-bind="text: nameGreeting"></h2>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "example": {
+                        "component": "Magently_Literals/js/example",
+                        "greetingProvider": "greeting_provider"
+                    },
+                    "greeting_provider": {
+                        "component": "Magently_Literals/js/greeting-provider"
+                    }
+                }
+            }
+        }
+    }
+</script>
