@@ -1,0 +1,23 @@
+{
+  "name": "roadmap/custom-product-link",
+  "version": "1.0.0",
+  "description": "Add new custom relation for product",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-backend": "102.0.*",
+    "magento/module-catalog": "104.0.*",
+    "magento/module-ui": "101.2.*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Roadmap\\CustomProductLink\\": ""
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var \Roadmap\CustomProductLink\Block\Product\ProductList\CustomLink $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+$items = $block->getItems();
+?>
+<?php if ($items->getSize()): ?>
+<div class="products wrapper grid products-grid products-related">
+    <div class="block-title title">
+        <strong id="block-customlink-heading" role="heading" aria-level="2"><?=__('Custom Link Products ')?></strong>
+    </div>
+    <ol class="products list items product-items">
+        <?php foreach ($items as $item):?>
+        <li class="item product product-item">
+            <div class="product-item-info" >
+                <a href="<?= $escaper->escapeUrl($item->getUrlModel()->getUrl($item)) ?>"
+                   class="product photo product-item-photo">
+                    <?= $block->getImage($item, 'related_products_list')->toHtml() ?>
+                </a>
+                <div class="product details product-item-details">
+                    <strong class="product name product-item-name"><a
+                            class="product-item-link"
+                            title="<?= $escaper->escapeHtmlAttr($item->getName()) ?>"
+                            href="<?= $escaper->escapeUrl($item->getUrlModel()->getUrl($item)) ?>">
+                            <?= $escaper->escapeHtml($item->getName()) ?></a>
+                    </strong>
+                    <?= /* @noEscape */ $block->getProductPrice($item) ?>
+                </div>
+            </div>
+        </li>
+    <?php endforeach;?>
+    </ol>
+</div>
+<?php endif;?>
